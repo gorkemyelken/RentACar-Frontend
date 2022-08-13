@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { Card, Container, Image, Grid} from 'semantic-ui-react'
+import { Card, Container, Image } from 'semantic-ui-react'
 import CarService from '../../services/carService';
 import './CarList.css';
 
@@ -17,37 +17,27 @@ export default function CarList() {
     return (
         <div>
             <Container className='carsContainer'>
-            <Grid columns={4} divided="vertically">
-                <Grid.Row>
+                <Card.Group itemsPerRow="3">
                     {cars.map((car) => (
-                        <Grid.Column>
-
-                            <Card key={car.carId}>
-
-                                <Image src=""circular />
-
-                                <Card.Content>
-                                    <Card.Header>
-                                       {car.carName}
-                                       </Card.Header>
-                                    <Card.Description>
-                                    
-                                    </Card.Description>
-                                    <br />
-                                    <Card.Content extra>
-
+                    
+                                <Card raised key={car.carId}>
+                                    <Image circular src={car.carImages[0].imagePath} />
+                                    <Card.Content>
+                                        <Card.Header>
+                                            {car.carName}
+                                        </Card.Header>
+                                        <Card.Description>
+                                            {car.description}
+                                        </Card.Description>
+                                        <br />
+                                        <Card.Content extra>
+                                        Daily Price: {car.dailyPrice} <br/>
+                                        Model Year: {car.modelYear}
+                                        </Card.Content>
                                     </Card.Content>
-
-                                </Card.Content>
-                            </Card>
-
-                        </Grid.Column>
-                    ))}
-                </Grid.Row>
-            </Grid>
-
+                                </Card>))}
+                </Card.Group>
             </Container>
-            
         </div>
     );
 }
