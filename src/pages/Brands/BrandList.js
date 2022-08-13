@@ -17,7 +17,7 @@ export default function BrandList() {
         <div>
             <Image.Group size="tiny">
                 {brands.map((brand) => (
-                    <Image src={brand.brandImagePath} />
+                    <Image key={brand.brandId} src={brand.brandImagePath} />
                 ))}
             </Image.Group>
         </div>

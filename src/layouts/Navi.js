@@ -12,12 +12,12 @@ export default function Navi() {
           <Menu.Item as={NavLink} to="/cars" content="Cars" icon="car" />
           <Menu.Item as={NavLink} to="/aboutus" content="About Us" icon="question circle" />
           <Menu.Menu position="right">
-            <Menu.Item >
+
               <Button as={NavLink} to="/signup" color='blue'>Sign Up</Button>
-            </Menu.Item>
-            <Menu.Item content="Sign Up">
+
+
               <Button as={NavLink} to="/login" color='green'>Log In</Button>
-            </Menu.Item>
+
           </Menu.Menu>
         </Container>
       </Menu>

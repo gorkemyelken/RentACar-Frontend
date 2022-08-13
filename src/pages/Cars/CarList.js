@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { Card, Container, Image, Grid, Form, Button } from 'semantic-ui-react'
 import CarService from '../../services/carService';
+import { NavLink } from "react-router-dom";
 
 export default function CarList() {
 
@@ -34,6 +35,8 @@ export default function CarList() {
                                             <Card.Content extra>
                                                 Daily Price: {car.dailyPrice} <br />
                                                 Model Year: {car.modelYear}
+                                                <br/>
+                                                <Button as={NavLink} to={`/cars/${car.carId}`}color='green'>Details</Button>
                                             </Card.Content>
                                         </Card.Content>
                                     </Card>))}
