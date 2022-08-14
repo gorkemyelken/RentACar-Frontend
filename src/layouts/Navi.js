@@ -9,7 +9,7 @@ export default function Navi() {
 
         <Container className="navi">
           <Menu.Item as={NavLink} to="/home" content="Home" icon="home" />
-          <Menu.Item as={NavLink} to="/cars" content="Cars" icon="car" />
+          <Menu.Item as={NavLink} to="/cars" content="Vehicles" icon="car" />
           <Menu.Item as={NavLink} to="/aboutus" content="About Us" icon="question circle" />
           <Menu.Menu position="right">
 

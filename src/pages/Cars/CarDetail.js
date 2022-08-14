@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import { useParams } from 'react-router-dom'
 import CarService from '../../services/carService';
-import { Container, Image } from 'semantic-ui-react'
+import { Container, Image, Grid } from 'semantic-ui-react'
 
 export default function CarDetail() {
     let { id } = useParams();
@@ -9,7 +9,7 @@ export default function CarDetail() {
 
     useEffect(() => {
         let carService = new CarService()
-        carService.findByCarId(id).then(result => setCar(result.data.data))
+        carService.findByCarId(id).then((result) => setCar(result.data.data));
     }, [])
 
     return (
@@ -18,14 +18,32 @@ export default function CarDetail() {
             <br />
             <h2>{car.carName}</h2>
             <hr />
-            <Image.Group size='large'>
-                <Image src={car.carImages[0]?.imagePath}></Image>
-                <Image src={car.carImages[1]?.imagePath}></Image>
-                <Image src={car.carImages[2]?.imagePath}></Image>
-                <Image src={car.carImages[3]?.imagePath}></Image>
-                <Image src={car.carImages[4]?.imagePath}></Image>
-
-            </Image.Group>
+            <Grid columns={2} divided>
+                <Grid.Row>
+                    <Grid.Column>
+                        <h3>Daily Price</h3>
+                        {car.dailyPrice}
+                        <h3>Model Year</h3>
+                        {car.modelYear}
+                        
+                    </Grid.Column>
+                    <Grid.Column>
+                    <h3>Description</h3>
+                        {car.description}
+                    </Grid.Column>
+                </Grid.Row>
+            </Grid>
+            {car.carImages == null
+                ? null
+                : <div>
+                    <Image.Group size='medium'>
+                        {car.carImages?.map((carImages) =>
+                            <Image src={carImages.imagePath} />
+                        )
+                        }
+                    </Image.Group>
+                </div>
+            }
 
         </Container>
     )
