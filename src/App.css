@@ -11,3 +11,10 @@
   font-size: 150px;
   margin-bottom: 30px;
 }
+
+.carDetailImage{
+  width: 150px;
+  filter: drop-shadow(8px 8px 10px rgb(128, 0, 0));
+  margin-top: 50px;
+  margin-bottom: 100px;
+}

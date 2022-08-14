@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import { useParams } from 'react-router-dom'
 import CarService from '../../services/carService';
-import { Container, Image, Grid } from 'semantic-ui-react'
+import { Container, Image, Table } from 'semantic-ui-react'
 
 export default function CarDetail() {
     let { id } = useParams();
@@ -18,25 +18,34 @@ export default function CarDetail() {
             <br />
             <h2>{car.carName}</h2>
             <hr />
-            <Grid columns={2} divided>
-                <Grid.Row>
-                    <Grid.Column>
-                        <h3>Daily Price</h3>
-                        {car.dailyPrice}
-                        <h3>Model Year</h3>
-                        {car.modelYear}
-                        
-                    </Grid.Column>
-                    <Grid.Column>
-                    <h3>Description</h3>
-                        {car.description}
-                    </Grid.Column>
-                </Grid.Row>
-            </Grid>
+            {car.carImages == null
+                ? null
+                : <div >
+                    <Image className='carDetailImage' src={car.carImages[0].imagePath} size="large" centered />
+                </div>
+            }
+            <Table textAlign='center' celled>
+                <Table.Header>
+                    <Table.Row>
+                        <Table.HeaderCell>Daily Price</Table.HeaderCell>
+                        <Table.HeaderCell>Model Year</Table.HeaderCell>
+                        <Table.HeaderCell>Description</Table.HeaderCell>
+                    </Table.Row>
+                </Table.Header>
+                <Table.Body>
+                    <Table.Row>
+                        <Table.Cell>{car.dailyPrice}</Table.Cell>
+                        <Table.Cell>{car.modelYear}</Table.Cell>
+                        <Table.Cell>{car.description}</Table.Cell>
+                    </Table.Row>
+                </Table.Body>
+            </Table>
+            <br />
+            <br />
             {car.carImages == null
                 ? null
                 : <div>
-                    <Image.Group size='medium'>
+                    <Image.Group size='medium' >
                         {car.carImages?.map((carImages) =>
                             <Image src={carImages.imagePath} />
                         )
