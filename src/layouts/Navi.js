@@ -13,10 +13,9 @@ export default function Navi() {
           <Menu.Item as={NavLink} to="/aboutus" content="About Us" icon="question circle" />
           <Menu.Menu position="right">
 
-              <Button as={NavLink} to="/signup" color='blue'>Sign Up</Button>
+              <Button circular fluid  as={NavLink} to="/signup" color='blue' content="Sign Up"/>
 
-
-              <Button as={NavLink} to="/login" color='green'>Log In</Button>
+              <Button circular fluid  as={NavLink} to="/login" color='green' content="Log In"/>
 
           </Menu.Menu>
         </Container>
