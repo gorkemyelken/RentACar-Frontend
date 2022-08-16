@@ -35,9 +35,9 @@ export default function CarList() {
                                             <Card.Content extra>
                                                 Daily Price: {car.dailyPrice} <br />
                                                 Model Year: {car.modelYear}
-                                                <br/>
-                                                <br/>
-                                                <Button as={NavLink} to={`/cars/${car.carId}`}color='blue'>Details</Button>
+                                                <br />
+                                                <br />
+                                                <Button as={NavLink} to={`/cars/${car.carId}`} color='blue'>Details</Button>
                                             </Card.Content>
                                         </Card.Content>
                                     </Card>))}

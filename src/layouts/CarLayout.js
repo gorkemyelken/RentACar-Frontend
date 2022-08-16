@@ -5,11 +5,11 @@ import CarList from '../pages/Cars/CarList'
 export default function CarLayout() {
   return (
     <Container>
-      <br/>
-      <br/>
-        <h2>Cars</h2>
-    <hr/>
-        <CarList/>
+      <br />
+      <br />
+      <h2>Cars</h2>
+      <hr />
+      <CarList />
     </Container>
   )
 }
