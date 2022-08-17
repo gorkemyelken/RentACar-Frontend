@@ -1,8 +1,6 @@
 import React from 'react'
-import { Image, Grid, Form, Button, Checkbox, Step } from 'semantic-ui-react'
-import wpleft from '../images/wp-left.jpg'
-import wpright from '../images/wp-right.jpg'
-import BrandList from '../pages/Brands/BrandList'
+import { Grid, Form, Button, Step } from 'semantic-ui-react'
+import BrandList from '../pages/BrandList'
 
 export default function HomeLayout() {
     const steps = [
@@ -23,12 +21,10 @@ export default function HomeLayout() {
         }
     ]
     return (
-        <div>
+        <div className='homeLayout'>
             <Grid columns='equal'>
                 <Grid.Row>
-                    <Grid.Column>
-                        <Image src={wpleft} />
-                    </Grid.Column>
+                    <Grid.Column/>
                     <Grid.Column width={8}><br /><br />
                         <h1 className='homeHeader'>Rent A Car</h1>
                         <Step.Group size='huge' items={steps} />
@@ -50,18 +46,12 @@ export default function HomeLayout() {
                                 <Form.Input label='Rent Date' placeholder='yyyy-mm-dd' width={8} />
                                 <Form.Input label='Return Date' placeholder='yyyy-mm-dd' width={8} />
                             </Form.Group>
-                            <Form.Field>
-                                <Checkbox label='I have read and accept the Rental Conditions.' />
-                            </Form.Field>
-                            <Button type='submit'>Create Reservation</Button>
+                            <Button type='submit'>Search</Button>
                         </Form>
                     </Grid.Column>
-                    <Grid.Column>
-                        <Image className='homeImageRight' src={wpright} />
-                    </Grid.Column>
+                    <Grid.Column/>
                 </Grid.Row>
             </Grid>
-
         </div>
     )
 }

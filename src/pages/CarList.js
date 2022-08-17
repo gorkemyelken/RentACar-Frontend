@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { Card, Container, Image, Grid, Form, Button } from 'semantic-ui-react'
-import CarService from '../../services/carService';
+import CarService from '../services/carService';
 import { NavLink } from "react-router-dom";
 
 export default function CarList() {
@@ -17,10 +17,10 @@ export default function CarList() {
     return (
         <div>
             <Container>
-                <br />
-                <br />
-                <h2>Cars</h2>
-                <hr />
+            <br />
+            <br />
+            <h2>Cars</h2>
+            <hr />
                 <Grid divided='vertically'>
                     <Grid.Row>
                         <Grid.Column width={13}>

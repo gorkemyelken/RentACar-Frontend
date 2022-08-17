@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import { useParams } from 'react-router-dom'
-import CarService from '../../services/carService';
+import CarService from '../services/carService';
 import { Container, Image, Table } from 'semantic-ui-react'
 
 export default function CarDetail() {

@@ -8,4 +8,8 @@ export default class CarService {
     findByCarId(id) {
         return axios.get("http://localhost:8080/api/cars/findbycarid?carId=" + id)
     }
+
+    add(values) {
+        return axios.post("http://localhost:8080/api/cars/add", values);
+    }
 }

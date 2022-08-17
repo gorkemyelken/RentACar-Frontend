@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { Image } from 'semantic-ui-react'
-import BrandService from '../../services/brandService';
+import BrandService from '../services/brandService';
 
 export default function BrandList() {
 
