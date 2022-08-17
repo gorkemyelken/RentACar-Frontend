@@ -15,16 +15,11 @@ export default function AdminLayout() {
                         <Button as={NavLink} to="/brands/add" circular color='green'>
                             Add A Brand
                         </Button>
-                        <Button circular color='teal'>
+                        <Button as={NavLink} to="/brands/update" circular color='teal'>
                             Update A Brand
                         </Button>
-                        <Button circular color='red'>
+                        <Button as={NavLink} to="/brands/delete" circular color='red'>
                             Delete A Brand
-                        </Button>
-                    </Card.Content>
-                    <Card.Content extra>
-                    <Button circular color='grey'>
-                            View All Brands
                         </Button>
                     </Card.Content>
                 </Card>
@@ -34,16 +29,11 @@ export default function AdminLayout() {
                         <Button as={NavLink} to="/cars/add" circular color='green'>
                             Add A Car
                         </Button>
-                        <Button circular color='teal'>
+                        <Button as={NavLink} to="/cars/update" circular color='teal'>
                             Update A Car
                         </Button>
-                        <Button circular color='red'>
+                        <Button as={NavLink} to="/cars/delete" circular color='red'>
                             Delete A Car
-                        </Button>
-                    </Card.Content>
-                    <Card.Content extra>
-                    <Button circular color='grey'>
-                            View All Cars
                         </Button>
                     </Card.Content>
                 </Card>
@@ -53,16 +43,11 @@ export default function AdminLayout() {
                         <Button as={NavLink} to="/colors/add" circular color='green'>
                             Add A Color
                         </Button>
-                        <Button circular color='teal'>
+                        <Button as={NavLink} to="/colors/update" circular color='teal'>
                             Update A Color
                         </Button>
-                        <Button circular color='red'>
+                        <Button as={NavLink} to="/colors/delete" circular color='red'>
                             Delete A Color
-                        </Button>
-                    </Card.Content>
-                    <Card.Content extra>
-                    <Button circular color='grey'>
-                            View All Colors
                         </Button>
                     </Card.Content>
                 </Card>
@@ -72,32 +57,25 @@ export default function AdminLayout() {
                         <Button as={NavLink} to="/customers/add" circular color='green'>
                             Add A Customer
                         </Button>
-                        <Button circular color='teal'>
+                        <Button as={NavLink} to="/customers/update" circular color='teal'>
                             Update A Customer
                         </Button>
-                        <Button circular color='red'>
+                        <Button as={NavLink} to="/customers/delete" circular color='red'>
                             Delete A Customer
-                        </Button>
-                    </Card.Content>
-                    <Card.Content extra>
-                    <Button circular color='grey'>
-                            View All Customers
                         </Button>
                     </Card.Content>
                 </Card>
                 <Card>
                 <Card.Content header='RENTALS' />
                     <Card.Content>
+                    <Button as={NavLink} to="/rentals/add" circular color='green'>
+                            Add A Rental
+                        </Button>
                         <Button circular color='teal'>
                             Update A Rental
                         </Button>
                         <Button circular color='red'>
                             Delete A Rental
-                        </Button>
-                    </Card.Content>
-                    <Card.Content extra>
-                    <Button circular color='grey'>
-                            View All Rentals
                         </Button>
                     </Card.Content>
                 </Card>

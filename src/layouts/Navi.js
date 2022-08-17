@@ -11,6 +11,7 @@ export default function Navi() {
           <Menu.Item as={NavLink} to="/home" content="Home" icon="home" />
           <Menu.Item as={NavLink} to="/cars" content="Vehicles" icon="car" />
           <Menu.Item as={NavLink} to="/aboutus" content="About Us" icon="question circle" />
+          <Menu.Item as={NavLink} to="/adminpanel" content="ADMİN PANEL"/>
           <Menu.Item position='right'>
       <Button primary>Sign up</Button>
     </Menu.Item>

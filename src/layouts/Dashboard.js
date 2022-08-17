@@ -2,6 +2,7 @@ import React from 'react'
 import { Route, Routes } from 'react-router-dom'
 import BrandAdd from '../pages/Admin Pages/BrandAdd'
 import ColorAdd from '../pages/Admin Pages/ColorAdd'
+import BrandList from '../pages/BrandList'
 import CarDetail from '../pages/CarDetail'
 import CarList from '../pages/CarList'
 import AboutUsLayout from './AboutUsLayout'
@@ -24,7 +25,7 @@ export default function Dashboard() {
         <Route exact path="/cars/:id" element={<CarDetail />} />
         <Route exact path="/brands/add" element={<BrandAdd />} />
         <Route exact path="/colors/add" element={<ColorAdd/>} />
-        <Route exact path="/adminPanel" element={<AdminLayout/>}/>
+        <Route exact path="/adminpanel" element={<AdminLayout/>}/>
       </Routes>
 
       <Footer />
