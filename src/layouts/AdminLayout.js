@@ -1,5 +1,5 @@
 import React from 'react'
-import { Card, Container, Icon, Button } from 'semantic-ui-react'
+import { Card, Container, Button } from 'semantic-ui-react'
 import { NavLink } from "react-router-dom";
 
 export default function AdminLayout() {
@@ -9,7 +9,7 @@ export default function AdminLayout() {
             <h2>Admin Panel</h2>
             <hr />
             <Card.Group itemsPerRow={2}>
-                <Card>
+                <Card color='red'>
                     <Card.Content header='BRANDS'></Card.Content>
                     <Card.Content>
                         <Button as={NavLink} to="/brands/add" circular color='green'>
@@ -23,8 +23,8 @@ export default function AdminLayout() {
                         </Button>
                     </Card.Content>
                 </Card>
-                <Card>
-                <Card.Content header='CARS' />
+                <Card color='red'>
+                    <Card.Content header='CARS' />
                     <Card.Content>
                         <Button as={NavLink} to="/cars/add" circular color='green'>
                             Add A Car
@@ -37,8 +37,8 @@ export default function AdminLayout() {
                         </Button>
                     </Card.Content>
                 </Card>
-                <Card>
-                <Card.Content header='COLORS' />
+                <Card color='red'>
+                    <Card.Content header='COLORS' />
                     <Card.Content>
                         <Button as={NavLink} to="/colors/add" circular color='green'>
                             Add A Color
@@ -51,8 +51,8 @@ export default function AdminLayout() {
                         </Button>
                     </Card.Content>
                 </Card>
-                <Card>
-                <Card.Content header='CUSTOMERS' />
+                <Card color='red'>
+                    <Card.Content header='CUSTOMERS' />
                     <Card.Content>
                         <Button as={NavLink} to="/customers/add" circular color='green'>
                             Add A Customer
@@ -65,10 +65,10 @@ export default function AdminLayout() {
                         </Button>
                     </Card.Content>
                 </Card>
-                <Card>
-                <Card.Content header='RENTALS' />
+                <Card color='red'>
+                    <Card.Content header='RENTALS' />
                     <Card.Content>
-                    <Button as={NavLink} to="/rentals/add" circular color='green'>
+                        <Button as={NavLink} to="/rentals/add" circular color='green'>
                             Add A Rental
                         </Button>
                         <Button circular color='teal'>

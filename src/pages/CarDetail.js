@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import { useParams } from 'react-router-dom'
 import CarService from '../services/carService';
-import { Container, Image, Table } from 'semantic-ui-react'
+import { Container, Image, Table, Button } from 'semantic-ui-react'
 
 export default function CarDetail() {
     let { id } = useParams();
@@ -24,6 +24,8 @@ export default function CarDetail() {
                     <Image className='carDetailImage' src={car.carImages[0].imagePath} size="large" centered />
                 </div>
             }
+            <Button color='blue' circular size='massive' className='rentNowButton'>Rent Now!</Button>
+            <hr/>
             <Table textAlign='center' celled>
                 <Table.Header>
                     <Table.Row>
@@ -34,7 +36,7 @@ export default function CarDetail() {
                 </Table.Header>
                 <Table.Body>
                     <Table.Row>
-                        <Table.Cell>{car.dailyPrice}</Table.Cell>
+                        <Table.Cell>{car.dailyPrice}₺</Table.Cell>
                         <Table.Cell>{car.modelYear}</Table.Cell>
                         <Table.Cell>{car.description}</Table.Cell>
                     </Table.Row>

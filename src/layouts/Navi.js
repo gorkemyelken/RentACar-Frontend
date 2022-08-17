@@ -11,14 +11,14 @@ export default function Navi() {
           <Menu.Item as={NavLink} to="/home" content="Home" icon="home" />
           <Menu.Item as={NavLink} to="/cars" content="Vehicles" icon="car" />
           <Menu.Item as={NavLink} to="/aboutus" content="About Us" icon="question circle" />
-          <Menu.Item as={NavLink} to="/adminpanel" content="ADMİN PANEL"/>
+          <Menu.Item as={NavLink} to="/adminpanel" content="ADMİN PANEL" />
           <Menu.Item position='right'>
-      <Button primary>Sign up</Button>
-    </Menu.Item>
+            <Button inverted color='red' as={NavLink} to="/signup">Sign up</Button>
+          </Menu.Item>
 
-    <Menu.Item>
-      <Button>Log-in</Button>
-    </Menu.Item>
+          <Menu.Item>
+            <Button color='red'>Log-in</Button>
+          </Menu.Item>
         </Container>
       </Menu>
     </div>

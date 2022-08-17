@@ -2,9 +2,9 @@ import React from 'react'
 import { Route, Routes } from 'react-router-dom'
 import BrandAdd from '../pages/Admin Pages/BrandAdd'
 import ColorAdd from '../pages/Admin Pages/ColorAdd'
-import BrandList from '../pages/BrandList'
 import CarDetail from '../pages/CarDetail'
 import CarList from '../pages/CarList'
+import SignUp from '../pages/SignUp'
 import AboutUsLayout from './AboutUsLayout'
 import AdminLayout from './AdminLayout'
 import Footer from './Footer'
@@ -26,6 +26,7 @@ export default function Dashboard() {
         <Route exact path="/brands/add" element={<BrandAdd />} />
         <Route exact path="/colors/add" element={<ColorAdd/>} />
         <Route exact path="/adminpanel" element={<AdminLayout/>}/>
+        <Route exact path="/signup" element={<SignUp/>}/>
       </Routes>
 
       <Footer />

@@ -17,10 +17,10 @@ export default function CarList() {
     return (
         <div>
             <Container>
-            <br />
-            <br />
-            <h2>Cars</h2>
-            <hr />
+                <br />
+                <br />
+                <h2>Cars</h2>
+                <hr />
                 <Grid divided='vertically'>
                     <Grid.Row>
                         <Grid.Column width={13}>

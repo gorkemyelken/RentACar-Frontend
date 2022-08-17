@@ -4,7 +4,7 @@ import BrandService from "../../services/brandService";
 import { Container, Grid, Form, Button } from "semantic-ui-react";
 
 export default function BrandAdd() {
-    const [open, setOpen] = useState(false);
+    const [, setOpen] = useState(false);
 
     let brandService = new BrandService();
 
@@ -46,13 +46,13 @@ export default function BrandAdd() {
                         <Formik>
                             <Form onSubmit={formik.handleSubmit}>
                                 <Form.Input
-                                    name="Brand Name"
-                                    label="Brand" centered
+                                    name="brandName"
+                                    label="Brand" 
                                     onChange={(event, data) => handleChange("brandName", data.value)}
                                     value={formik.values.brandName}
                                 />
                                 <Form.Input
-                                    name="Brand Logo"
+                                    name="brandImagePath"
                                     label="Brand Logo Path"
                                     onChange={(event, data) => handleChange("brandImagePath", data.value)}
                                     value={formik.values.brandImagePath}

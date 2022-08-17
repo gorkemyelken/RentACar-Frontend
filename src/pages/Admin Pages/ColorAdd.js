@@ -1,15 +1,15 @@
 import React, { useState } from "react";
 import { Formik, useFormik } from "formik";
 import ColorService from "../../services/colorService";
-import { Container, Grid, Form, Button } from "semantic-ui-react";
+import { Container, Grid, Form, Button, Label } from "semantic-ui-react";
 
 export default function ColorAdd() {
-    const [open, setOpen] = useState(false);
+    const [, setOpen] = useState(false);
 
     let colorService = new ColorService();
 
     const initialValues = {
-        color: "",
+        colorName: "",
     };
 
     const onSubmit = (values, { resetForm }) => {
@@ -46,8 +46,8 @@ export default function ColorAdd() {
                         <Formik>
                             <Form onSubmit={formik.handleSubmit}>
                                 <Form.Input
-                                    name="Color Name"
-                                    label="Color" centered
+                                    name="colorName"
+                                    label="Color"
                                     onChange={(event, data) => handleChange("colorName", data.value)}
                                     value={formik.values.colorName}
                                 />
