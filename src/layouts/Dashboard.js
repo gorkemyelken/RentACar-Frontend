@@ -5,6 +5,7 @@ import ColorAdd from '../pages/Admin Pages/ColorAdd'
 import CarDetail from '../pages/CarDetail'
 import CarList from '../pages/CarList'
 import AboutUsLayout from './AboutUsLayout'
+import AdminLayout from './AdminLayout'
 import Footer from './Footer'
 import HomeLayout from './HomeLayout'
 import Navi from './Navi'
@@ -23,6 +24,7 @@ export default function Dashboard() {
         <Route exact path="/cars/:id" element={<CarDetail />} />
         <Route exact path="/brands/add" element={<BrandAdd />} />
         <Route exact path="/colors/add" element={<ColorAdd/>} />
+        <Route exact path="/adminPanel" element={<AdminLayout/>}/>
       </Routes>
 
       <Footer />
