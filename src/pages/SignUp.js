@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Formik, useFormik, ErrorMessage } from "formik";
+import { Formik, useFormik } from "formik";
 import CustomerService from "../services/customerService";
 import { Container, Grid, Form, Button, Checkbox} from "semantic-ui-react";
 
@@ -77,6 +77,7 @@ export default function () {
                                 <Form.Input
                                     name="nationalityNumber"
                                     label="Nationality Number"
+                                    placeholder="XXXXXXXXXXX"
                                     required
                                     onChange={(event, data) => handleChange("nationalityNumber", data.value)}
                                     value={formik.values.nationalityNumber}

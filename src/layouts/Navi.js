@@ -6,7 +6,6 @@ export default function Navi() {
   return (
     <div>
       <Menu inverted fixed="top" borderless size="huge">
-
         <Container className="navi">
           <Menu.Item as={NavLink} to="/home" content="Home" icon="home" />
           <Menu.Item as={NavLink} to="/cars" content="Vehicles" icon="car" />
@@ -15,7 +14,6 @@ export default function Navi() {
           <Menu.Item position='right'>
             <Button inverted color='red' as={NavLink} to="/signup">Sign up</Button>
           </Menu.Item>
-
           <Menu.Item>
             <Button color='red'>Log-in</Button>
           </Menu.Item>

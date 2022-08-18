@@ -41,7 +41,7 @@ export default function CarList() {
                                                 Model Year: {car.modelYear}
                                                 <br />
                                                 <br />
-                                                <Button as={NavLink} to={`/cars/${car.carId}`} color='blue'>Details</Button>
+                                                <Button circular as={NavLink} to={`/cars/${car.carId}`} color='blue'>View Detail</Button>
                                             </Card.Content>
                                         </Card.Content>
                                     </Card>))}
