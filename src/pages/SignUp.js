@@ -3,7 +3,7 @@ import { Formik, useFormik } from "formik";
 import CustomerService from "../services/customerService";
 import { Container, Grid, Form, Button, Checkbox} from "semantic-ui-react";
 
-export default function () {
+export default function SignUp() {
     const [, setOpen] = useState(false);
 
     let customerService = new CustomerService();

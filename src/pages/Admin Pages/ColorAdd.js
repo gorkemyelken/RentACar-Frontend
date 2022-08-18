@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { Formik, useFormik } from "formik";
 import ColorService from "../../services/colorService";
-import { Container, Grid, Form, Button, Label } from "semantic-ui-react";
+import { Container, Grid, Form, Button } from "semantic-ui-react";
 
 export default function ColorAdd() {
     const [, setOpen] = useState(false);

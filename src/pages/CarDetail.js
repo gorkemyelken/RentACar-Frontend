@@ -5,12 +5,11 @@ import { Container, Image, Table, Button } from 'semantic-ui-react'
 
 export default function CarDetail() {
     let { id } = useParams();
-    const [car, setCar] = useState({})
-
+    const [car, setCar] = useState({});
+    let carService = new CarService();
     useEffect(() => {
-        let carService = new CarService()
         carService.findByCarId(id).then((result) => setCar(result.data.data));
-    }, [])
+    }, []);
 
     return (
         <Container>

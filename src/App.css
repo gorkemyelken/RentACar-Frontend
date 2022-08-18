@@ -27,3 +27,12 @@
 .carDetailImage:hover {
   border-radius: 10px;
 }
+
+.brandImage{
+  filter: grayscale(100%);
+}
+
+.brandImage:hover{
+  filter: grayscale(0%);
+  filter: brightness(100%);
+}
