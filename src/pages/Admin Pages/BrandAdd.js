@@ -1,69 +1,62 @@
-import React, { useState } from "react";
-import { Formik, useFormik } from "formik";
+import React from "react";
+import { useFormik } from "formik";
+import { Container, Grid, Form, Input, Button } from "semantic-ui-react";
 import BrandService from "../../services/brandService";
-import { Container, Grid, Form, Button } from "semantic-ui-react";
 
 export default function BrandAdd() {
-    const [, setOpen] = useState(false);
+  let brandService = new BrandService();
 
-    let brandService = new BrandService();
+  const validationSchema = Yup.object().shape({
+    brandName: yup.string().required(),
+    brandImagePath: yup.string().required()
+  });
+  
+  const { handleSubmit, handleChange, values } = useFormik({
+    initialValues: {
+      brandName: "",
+      brandImagePath: "",
+    },
+    onSubmit: (values) => {
+      console.log(values);
+      brandService.add(values);
+    },
+    validationSchema
+  });
 
-    const initialValues = {
-        brand: "",
-    };
+  return (
+    <Container>
+      <br />
+      <br />
+      <h2>Add A Brand</h2>
+      <hr />
+      <Grid centered>
+        <Grid.Row>
+          <Grid.Column width={8}>
+            <Form onSubmit={handleSubmit} className="form">
+              <h3>Brand Name</h3>
+              <Input
+                fluid
+                name="brandName"
+                value={values.brandName}
+                onChange={handleChange}
+              />
+              <h3>Brand Logo</h3>
+              <Input
+                fluid
+                name="brandImagePath"
+                value={values.brandImagePath}
+                onChange={handleChange}
+              />
+              <br />
+              <Button fluid color="green" type="submit">
+                Submit
+              </Button>
 
-    const onSubmit = (values, { resetForm }) => {
-        console.log(values);
-        brandService.add(values);
-        handleModal(true);
-        setTimeout(() => {
-            resetForm();
-        }, 100);
-    };
-
-    const formik = useFormik({
-        initialValues: initialValues,
-        onSubmit: onSubmit,
-    });
-
-    const handleModal = (value) => {
-        setOpen(value);
-    };
-
-    const handleChange = (fieldName, value) => {
-        formik.setFieldValue(fieldName, value);
-    };
-
-    return (
-        <Container>
-            <br />
-            <br />
-            <h2>Add A Brand</h2>
-            <hr />
-            <Grid centered>
-                <Grid.Row>
-                    <Grid.Column width={8}>
-                        <Formik>
-                            <Form onSubmit={formik.handleSubmit}>
-                                <Form.Input
-                                    name="brandName"
-                                    label="Brand" 
-                                    onChange={(event, data) => handleChange("brandName", data.value)}
-                                    value={formik.values.brandName}
-                                />
-                                <Form.Input
-                                    name="brandImagePath"
-                                    label="Brand Logo Path"
-                                    onChange={(event, data) => handleChange("brandImagePath", data.value)}
-                                    value={formik.values.brandImagePath}
-                                />
-                                <br />
-                                <Button circular fluid type="submit" color="green" content="Add" />
-                            </Form>
-                        </Formik>
-                    </Grid.Column>
-                </Grid.Row>
-            </Grid>
-        </Container>
-    );
+              <code>{JSON.stringify(values)}</code>
+            </Form>
+          </Grid.Column>
+        </Grid.Row>
+      </Grid>
+    </Container>
+  );
 }

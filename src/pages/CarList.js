@@ -37,7 +37,7 @@ export default function CarList() {
                                             </Card.Description>
                                             <br />
                                             <Card.Content extra>
-                                                Daily Price: {car.dailyPrice} <br />
+                                                Daily Price: {car.dailyPrice}₺ <br />
                                                 Model Year: {car.modelYear}
                                                 <br />
                                                 <br />

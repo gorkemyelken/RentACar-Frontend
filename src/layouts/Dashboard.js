@@ -7,6 +7,7 @@ import CarList from '../pages/CarList'
 import SignUp from '../pages/SignUp'
 import AboutUsLayout from './AboutUsLayout'
 import AdminLayout from './AdminLayout'
+import Error404 from './Error404'
 import Footer from './Footer'
 import HomeLayout from './HomeLayout'
 import Navi from './Navi'
@@ -27,6 +28,7 @@ export default function Dashboard() {
         <Route exact path="/colors/add" element={<ColorAdd/>} />
         <Route exact path="/adminpanel" element={<AdminLayout/>}/>
         <Route exact path="/signup" element={<SignUp/>}/>
+        <Route exact path="*" element={<Error404/>}/>
       </Routes>
 
       <Footer />

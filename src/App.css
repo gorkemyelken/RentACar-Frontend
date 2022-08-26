@@ -1,3 +1,9 @@
+@import url(https://fonts.googleapis.com/css?family=Montserrat&display=swap); /* montserrat */
+
+.ui {
+  font-family: montserrat, sans-serif !important;
+}
+
 .App {
   text-align: center;
 }
@@ -35,4 +41,13 @@
 .brandImage:hover{
   filter: grayscale(0%);
   filter: brightness(100%);
+}
+
+.form{
+  width: 100%;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
 }
