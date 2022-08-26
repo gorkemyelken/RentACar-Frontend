@@ -1,17 +1,18 @@
 import React from "react";
 import { useFormik } from "formik";
-import { Container, Grid, Form, Input, Button } from "semantic-ui-react";
+import { Container, Grid, Form, Input, Button, Label } from "semantic-ui-react";
 import BrandService from "../../services/brandService";
+import * as yup from "yup";
 
 export default function BrandAdd() {
   let brandService = new BrandService();
 
-  const validationSchema = Yup.object().shape({
-    brandName: yup.string().required(),
-    brandImagePath: yup.string().required()
+  const validationSchema = yup.object().shape({
+    brandName: yup.string().required('Required field.'),
+    brandImagePath: yup.string().required('Required field.')
   });
   
-  const { handleSubmit, handleChange, values } = useFormik({
+  const { handleSubmit, handleChange, values, errors, touched, handleBlur } = useFormik({
     initialValues: {
       brandName: "",
       brandImagePath: "",
@@ -39,15 +40,19 @@ export default function BrandAdd() {
                 name="brandName"
                 value={values.brandName}
                 onChange={handleChange}
+                onBlur={handleBlur}
               />
+              {errors.brandName && touched.brandName && (<Label basic color='red' pointing='above'>{errors.brandName}</Label>)}
               <h3>Brand Logo</h3>
               <Input
                 fluid
                 name="brandImagePath"
                 value={values.brandImagePath}
                 onChange={handleChange}
+                onBlur={handleBlur}
               />
-              <br />
+              {errors.brandImagePath && touched.brandImagePath && (<Label  basic color='red' pointing='above'>{errors.brandImagePath}</Label>)}
+              <br /><br/>
               <Button fluid color="green" type="submit">
                 Submit
               </Button>
