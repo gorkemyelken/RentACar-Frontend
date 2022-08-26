@@ -20,17 +20,6 @@ export default function ColorAdd() {
       progress: undefined,
     });
 
-  const notifyError = () =>
-    toast.warn("Color could not be added!", {
-      position: "bottom-center",
-      autoClose: 5000,
-      hideProgressBar: false,
-      closeOnClick: true,
-      pauseOnHover: true,
-      draggable: true,
-      progress: undefined,
-    });
-
   const validationSchema = yup.object().shape({
     colorName: yup.string().required("Required field."),
   });
@@ -43,12 +32,8 @@ export default function ColorAdd() {
       onSubmit: (values, { resetForm }) => {
         console.log(values);
         colorService.add(values);
-        if (colorService.add(values)) {
-          resetForm();
-          notifySuccess();
-        } else {
-          notifyError();
-        }
+        resetForm();
+        notifySuccess();
       },
       validationSchema,
     });

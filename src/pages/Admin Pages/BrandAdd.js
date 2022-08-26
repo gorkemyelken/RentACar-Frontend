@@ -9,7 +9,7 @@ import "react-toastify/dist/ReactToastify.css";
 export default function BrandAdd() {
   let brandService = new BrandService();
 
-  const notify = () =>
+  const notifySuccess = () =>
     toast.success("Brand added!", {
       position: "bottom-center",
       autoClose: 5000,
@@ -34,10 +34,8 @@ export default function BrandAdd() {
       onSubmit: (values, { resetForm }) => {
         console.log(values);
         brandService.add(values);
-        if (brandService.add(values)) {
-          resetForm();
-          notify();
-        }
+        resetForm();
+        notifySuccess();
       },
       validationSchema,
     });

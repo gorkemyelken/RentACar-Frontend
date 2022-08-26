@@ -9,7 +9,7 @@ import "react-toastify/dist/ReactToastify.css";
 export default function SignUp() {
   let customerService = new CustomerService();
 
-  const notify = () =>
+  const notifySuccess = () =>
     toast.success("You have successfully registered!", {
       position: "bottom-center",
       autoClose: 5000,
@@ -76,10 +76,7 @@ export default function SignUp() {
       onSubmit: (values, { resetForm }) => {
         console.log(values);
         customerService.add(values);
-        if (customerService.add(values)) {
-          resetForm();
-          notify();
-        }
+        notifySuccess();
       },
       validationSchema,
     });

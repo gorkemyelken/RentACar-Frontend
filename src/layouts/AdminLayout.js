@@ -16,10 +16,12 @@ export default function AdminLayout() {
                             <Icon name="add" />
                             Add A Brand
                         </Button>
+                        <br/><br/>
                         <Button as={NavLink} to="/brands/update" circular color='teal'>
                             <Icon name="level up" />
                             Update A Brand
                         </Button>
+                        <br/><br/>
                         <Button as={NavLink} to="/brands/delete" circular color='red'>
                             <Icon name="trash" />
                             Delete A Brand
@@ -33,10 +35,12 @@ export default function AdminLayout() {
                             <Icon name="add" />
                             Add A Car
                         </Button>
+                        <br/><br/>
                         <Button as={NavLink} to="/cars/update" circular color='teal'>
                             <Icon name="level up" />
                             Update A Car
                         </Button>
+                        <br/><br/>
                         <Button as={NavLink} to="/cars/delete" circular color='red'>
                             <Icon name="trash" />
                             Delete A Car
@@ -50,10 +54,12 @@ export default function AdminLayout() {
                             <Icon name="add" />
                             Add A Color
                         </Button>
+                        <br/><br/>
                         <Button as={NavLink} to="/colors/update" circular color='teal'>
                             <Icon name="level up" />
                             Update A Color
                         </Button>
+                        <br/><br/>
                         <Button as={NavLink} to="/colors/delete" circular color='red'>
                             <Icon name="trash" />
                             Delete A Color
