@@ -5,9 +5,6 @@ import { Container, Grid, List, Icon, Divider } from 'semantic-ui-react'
 export default function Footer() {
     return (
         <Container className="footer">
-            <br/>
-            <br/>
-            <br/>
             <Divider/>
             <br/>
             <Grid>

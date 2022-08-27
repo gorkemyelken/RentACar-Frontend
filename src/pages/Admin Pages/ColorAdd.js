@@ -1,6 +1,6 @@
 import React from "react";
 import { useFormik } from "formik";
-import { Container, Grid, Form, Input, Button, Label } from "semantic-ui-react";
+import { Container, Grid, Form, Input, Button, Label, Segment } from "semantic-ui-react";
 import ColorService from "../../services/colorService";
 import * as yup from "yup";
 import { ToastContainer, toast } from "react-toastify";
@@ -51,10 +51,9 @@ export default function ColorAdd() {
         draggable
         pauseOnHover
       />
-      <br />
-      <br />
+
       <h2>Add A Color</h2>
-      <hr />
+      <Segment basic size="tiny" color="black" />
       <Grid centered>
         <Grid.Row>
           <Grid.Column width={8}>

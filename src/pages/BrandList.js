@@ -4,13 +4,13 @@ import BrandService from '../services/brandService';
 
 export default function BrandList() {
 
-    const [brands, setbrands] = useState([]);
+    const [brands, setBrands] = useState([]);
 
 
 
     useEffect(() => {
         let brandService = new BrandService();
-        brandService.getBrands().then((result) => setbrands(result.data.data));
+        brandService.getBrands().then((result) => setBrands(result.data.data));
     }, []);
 
     return (

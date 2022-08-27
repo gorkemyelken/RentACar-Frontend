@@ -1,6 +1,6 @@
 import React from "react";
 import { useFormik } from "formik";
-import { Container, Grid, Form, Input, Button, Label } from "semantic-ui-react";
+import { Container, Grid, Form, Input, Button, Label, Segment } from "semantic-ui-react";
 import CustomerService from "../services/customerService";
 import * as yup from "yup";
 import { ToastContainer, toast } from "react-toastify";
@@ -20,7 +20,7 @@ export default function SignUp() {
       progress: undefined,
     });
 
-  const generateYearOptions = () => {
+  const yearOptions = () => {
     const arr = [];
 
     const startYear = 1900;
@@ -83,21 +83,8 @@ export default function SignUp() {
 
   return (
     <Container>
-      <ToastContainer
-        position="top-right"
-        autoClose={5000}
-        hideProgressBar={false}
-        newestOnTop={false}
-        closeOnClick
-        rtl={false}
-        pauseOnFocusLoss
-        draggable
-        pauseOnHover
-      />
-      <br />
-      <br />
       <h2>Sign Up</h2>
-      <hr />
+      <Segment basic size="tiny" color="black" />
       <Grid centered>
         <Grid.Row>
           <Grid.Column width={8}>
@@ -160,12 +147,11 @@ export default function SignUp() {
                     <h3>Birth Year</h3>
                     <select
                       name="birthYear"
-                      placeholder="YYYY"
                       value={values.birthYear}
                       onChange={handleChange}
                     >
                       <option>Year</option>
-                      {generateYearOptions()}
+                      {yearOptions()}
                     </select>
                     {errors.birthYear && touched.birthYear && (
                       <Label basic color="red" pointing="above">
@@ -229,7 +215,7 @@ export default function SignUp() {
 
               <br />
               <br />
-              <Button fluid color="green" type="submit">
+              <Button type="submit" className="signUpButton">
                 Submit
               </Button>
 
@@ -238,6 +224,18 @@ export default function SignUp() {
           </Grid.Column>
         </Grid.Row>
       </Grid>
+      <ToastContainer
+        position="top-right"
+        autoClose={5000}
+        hideProgressBar={false}
+        newestOnTop={false}
+        closeOnClick
+        rtl={false}
+        pauseOnFocusLoss
+        draggable
+        pauseOnHover
+      />
     </Container>
+    
   );
 }

@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { Card, Container, Image, Grid, Form, Button } from "semantic-ui-react";
+import { Card, Container, Image, Grid, Form, Button, Segment, CardContent, Label } from "semantic-ui-react";
 import CarService from "../services/carService";
 import { NavLink } from "react-router-dom";
 
@@ -14,10 +14,8 @@ export default function CarList() {
   return (
     <div>
       <Container>
-        <br />
-        <br />
-        <h2>Cars</h2>
-        <hr />
+        <h2>CARS</h2>
+        <Segment basic size="tiny" color="black" />
         <Grid divided="vertically">
           <Grid.Row>
             <Grid.Column width={13}>
@@ -29,25 +27,31 @@ export default function CarList() {
                       size="huge"
                       src={car.carImages[0].imagePath}
                     />
-                    <Card.Content>
+                    <Card.Content className="montserrat">
                       <Card.Header>{car.carName}</Card.Header>
                       <Card.Description>{car.description}</Card.Description>
                       <br />
                       <Card.Content extra>
-                        Daily Price: {car.dailyPrice}₺ <br />
-                        Model Year: {car.modelYear}
-                        <br />
-                        <br />
-                        <Button
+                        <strong>Daily Price: </strong>
+                        <Label color='black' horizontal size="large">
+                        {car.dailyPrice}₺ 
+      </Label>
+                        
+                      </Card.Content>
+                    </Card.Content>
+                    <CardContent>
+                    
+                    <Button
                           circular
+                          floated="right"
+                          inverted
                           as={NavLink}
                           to={`/cars/${car.carId}`}
-                          color="blue"
+                          color="red"
                         >
                           View Detail
                         </Button>
-                      </Card.Content>
-                    </Card.Content>
+                    </CardContent>
                   </Card>
                 ))}
               </Card.Group>
@@ -67,9 +71,9 @@ export default function CarList() {
                   <Form.Input fluid label="Max" />
                 </Form.Group>
                 <br />
-                <Button circular fluid color="green" content="Filter" />
+                <Button inverted circular fluid color="green" content="Filter" />
                 <br />
-                <Button circular fluid content="Clear Filter" />
+                <Button  circular fluid color="grey" content="Clear Filter" />
               </Form>
             </Grid.Column>
           </Grid.Row>

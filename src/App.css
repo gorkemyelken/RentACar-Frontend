@@ -1,4 +1,5 @@
-@import url(https://fonts.googleapis.com/css?family=Montserrat&display=swap); /* montserrat */
+@import url(https://fonts.googleapis.com/css?family=Montserrat&display=swap);
+@import url(https://use.typekit.net/jur8lgk.css);
 
 .ui {
   font-family: montserrat, sans-serif !important;
@@ -8,23 +9,35 @@
   text-align: center;
 }
 
+.ui.button {
+  font-family: montserrat, sans-serif !important;
+}
+
+.montserrat {
+  font-family: montserrat, sans-serif !important;
+}
+
+.orbitron {
+  font-family: orbitron, sans-serif !important;
+}
+
+.ui h2 {
+  font-family: orbitron, sans-serif !important;
+  padding-top: 75px;
+  color: #db2828;
+}
+
 .homeLayout {
   background: url('images/bg.png') no-repeat center center;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
-  background-size: cover;
-}
-
-.homeHeader {
-  text-transform: uppercase;
-  font-size: 150px;
-  margin-bottom: 30px;
+  background-size: 100% 100%; 
 }
 
 .carDetailImage {
   width: 150px;
-  filter: drop-shadow(8px 8px 8px rgb(128, 0, 0));
+  filter: drop-shadow(8px 8px 8px rgb(0, 0, 0));
   margin-top: 50px;
   margin-bottom: 100px;
   border-radius: 50%;
@@ -33,6 +46,28 @@
 .carDetailImage:hover {
   border-radius: 10px;
 }
+
+.ui.button.rentButton,
+.ui.button.signUpButton
+{
+  display: block;
+  margin: auto;
+  font-family: orbitron, sans-serif !important;
+  font-size: 20px;
+  color: white;
+  background-color: #db2828;
+  height: 50px;
+  width: 200px;
+  border-radius: 20px;
+}
+
+.ui.button.rentButton:hover,
+.ui.button.signUpButton:hover {
+  color: white;
+  background-color: black;
+}
+
+
 
 .brandImage{
   filter: grayscale(100%);
