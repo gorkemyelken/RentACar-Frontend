@@ -4,6 +4,7 @@ import BrandAdd from "../pages/Admin Pages/BrandAdd";
 import BrandDelete from "../pages/Admin Pages/BrandDelete";
 import CarAdd from "../pages/Admin Pages/CarAdd";
 import ColorAdd from "../pages/Admin Pages/ColorAdd";
+import ColorDelete from "../pages/Admin Pages/ColorDelete";
 import CarDetail from "../pages/CarDetail";
 import CarList from "../pages/CarList";
 import SignUp from "../pages/SignUp";
@@ -27,6 +28,7 @@ export default function Dashboard() {
         <Route exact path="/brands/add" element={<BrandAdd />} />
         <Route exact path="/brands/delete" element={<BrandDelete />} />
         <Route exact path="/colors/add" element={<ColorAdd />} />
+        <Route exact path="/colors/delete" element={<ColorDelete />} />
         <Route exact path="/adminpanel" element={<AdminLayout />} />
         <Route exact path="/signup" element={<SignUp />} />
         <Route exact path="*" element={<Error404 />} />

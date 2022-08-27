@@ -12,4 +12,8 @@ export default class ColorService {
     add(values) {
         return axios.post("http://localhost:8080/api/colors/add", values);
     }
+
+    delete(id) {
+        return axios.delete("http://localhost:8080/api/colors/delete?colorId=" + id)
+    }
 }

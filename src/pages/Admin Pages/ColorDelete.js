@@ -1,15 +1,15 @@
 import React, { useEffect, useState } from "react";
 import { Container, Grid, Button, Segment } from "semantic-ui-react";
-import BrandService from "../../services/brandService";
+import ColorService from "../../services/colorService";
 import "react-toastify/dist/ReactToastify.css";
 import { ToastContainer, toast } from "react-toastify";
 
-export default function BrandDelete() {
-  let brandService = new BrandService();
-  const [brands, setBrands] = useState([]);
+export default function ColorDelete() {
+  let colorService = new ColorService();
+  const [colors, setColors] = useState([]);
 
   const notify = () =>
-    toast.error("Brand deleted!", {
+    toast.error("Color deleted!", {
       position: "bottom-center",
       autoClose: 5000,
       hideProgressBar: false,
@@ -20,11 +20,11 @@ export default function BrandDelete() {
     });
 
   useEffect(() => {
-    brandService.getBrands().then((result) => setBrands(result.data.data));
+    colorService.getColors().then((result) => setColors(result.data.data));
   }, []);
 
-  const handleDelete = (brandId) => {
-    brandService.delete(brandId);
+  const handleDelete = (colorId) => {
+    colorService.delete(colorId);
     notify();
   };
 
@@ -32,19 +32,19 @@ export default function BrandDelete() {
 
   return (
     <Container>
-      <h2>Delete A Brand</h2>
+      <h2>Delete A Color</h2>
       <Segment basic size="tiny" color="black" />
       <Grid centered>
         <Grid.Row>
           <Grid.Column width={8}>
-            {brands.map((brand) => (
-              <Segment key={brand.brandId}>
-                <h3>{brand.brandName}</h3>
+            {colors.map((color) => (
+              <Segment key={color.colorId}>
+                <h3>{color.colorName}</h3>
                 <Button
                   icon="trash"
                   color="red"
                   floated="right"
-                  onClick={() => handleDelete(brand.brandId)}
+                  onClick={() => handleDelete(color.colorId)}
                 />
                 <br />
                 <br />
