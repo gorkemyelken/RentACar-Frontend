@@ -22,16 +22,21 @@ export default function Dashboard() {
       <Routes>
         <Route exact path="/" element={<HomeLayout />} />
         <Route exact path="/home" element={<HomeLayout />} />
-        <Route exact path="/cars" element={<CarList />} />
         <Route exact path="/aboutus" element={<AboutUsLayout />} />
-        <Route exact path="/cars/:id" element={<CarDetail />} />
-        <Route exact path="/brands/add" element={<BrandAdd />} />
-        <Route exact path="/brands/delete" element={<BrandDelete />} />
-        <Route exact path="/colors/add" element={<ColorAdd />} />
-        <Route exact path="/colors/delete" element={<ColorDelete />} />
         <Route exact path="/adminpanel" element={<AdminLayout />} />
         <Route exact path="/signup" element={<SignUp />} />
         <Route exact path="*" element={<Error404 />} />
+
+        <Route exact path="/cars" element={<CarList />} />      
+        <Route exact path="/cars/:id" element={<CarDetail />} />
+        <Route exact path="/cars/add" element={<CarAdd />} />   
+
+        <Route exact path="/brands/add" element={<BrandAdd />} />
+        <Route exact path="/brands/delete" element={<BrandDelete />} />
+
+        <Route exact path="/colors/add" element={<ColorAdd />} />
+        <Route exact path="/colors/delete" element={<ColorDelete />} />
+        
       </Routes>
 
       <Footer />

@@ -5,7 +5,7 @@ import { NavLink } from "react-router-dom";
 export default function AdminLayout() {
   return (
     <Container>
-      <h2>Admin Panel</h2>
+      <h2>ADMIN PANEL</h2>
       <Segment basic size="tiny" color="black" />
       <Card.Group itemsPerRow={3}>
         <Card color="red">

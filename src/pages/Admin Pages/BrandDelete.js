@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { Container, Grid, Button, Segment } from "semantic-ui-react";
+import { Container, Grid, Button, Card, Image, Segment, CardContent } from "semantic-ui-react";
 import BrandService from "../../services/brandService";
 import "react-toastify/dist/ReactToastify.css";
 import { ToastContainer, toast } from "react-toastify";
@@ -28,28 +28,30 @@ export default function BrandDelete() {
     notify();
   };
 
-  
-
   return (
     <Container>
       <h2>Delete A Brand</h2>
       <Segment basic size="tiny" color="black" />
       <Grid centered>
         <Grid.Row>
-          <Grid.Column width={8}>
-            {brands.map((brand) => (
-              <Segment key={brand.brandId}>
-                <h3>{brand.brandName}</h3>
-                <Button
-                  icon="trash"
-                  color="red"
-                  floated="right"
-                  onClick={() => handleDelete(brand.brandId)}
-                />
-                <br />
-                <br />
-              </Segment>
-            ))}
+          <Grid.Column width={16}>
+            <Card.Group itemsPerRow="5">
+              {brands.map((brand) => (
+                <Card raised key={brand.brandId}>
+                  <Card.Content className="montserrat">
+                    <Card.Header>{brand.brandName}</Card.Header>
+                  </Card.Content>
+                  <CardContent extra>
+                    <Button
+                      icon="trash"
+                      color="red"
+                      floated="right"
+                      onClick={() => handleDelete(brand.brandId)}
+                    />
+                  </CardContent>
+                </Card>
+              ))}
+            </Card.Group>
           </Grid.Column>
         </Grid.Row>
       </Grid>

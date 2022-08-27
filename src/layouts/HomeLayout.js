@@ -1,5 +1,5 @@
 import React from "react";
-import { Grid, Form, Button, Step, Segment, Image } from "semantic-ui-react";
+import { Grid, Form, Button, Step, Image } from "semantic-ui-react";
 import BrandList from "../pages/BrandList";
 import homeImage from "../images/homeImage.png";
 

@@ -8,7 +8,7 @@ export default function Navi() {
     <div>
       <Menu inverted fixed="top" borderless size="huge">
         <Container>
-          <Image src={logo}/>
+          <Image src={logo} href="/home"/>
           <Menu.Item as={NavLink} to="/home" content="Home" icon="home" />
           <Menu.Item as={NavLink} to="/cars" content="Vehicles" icon="car" />
           <Menu.Item as={NavLink} to="/aboutus" content="About Us" icon="question circle" />

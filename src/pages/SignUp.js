@@ -76,6 +76,7 @@ export default function SignUp() {
       onSubmit: (values, { resetForm }) => {
         console.log(values);
         customerService.add(values);
+        resetForm();
         notify();
       },
       validationSchema,

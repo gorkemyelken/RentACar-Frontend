@@ -4,9 +4,7 @@ import CarService from "../services/carService";
 import {
   Container,
   Image,
-  Grid,
   Button,
-  Icon,
   Label,
   Segment,
 } from "semantic-ui-react";
@@ -55,7 +53,7 @@ export default function CarDetail() {
         <div>
           <Image.Group size="medium">
             {car.carImages?.map((carImages) => (
-              <Image src={carImages.imagePath} href={carImages.imagePath} />
+              <Image key={carImages.carImageId} src={carImages.imagePath} href={carImages.imagePath} />
             ))}
           </Image.Group>
         </div>

@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { Container, Grid, Button, Segment } from "semantic-ui-react";
+import { Container, Grid, Button, Segment, Card, CardContent } from "semantic-ui-react";
 import ColorService from "../../services/colorService";
 import "react-toastify/dist/ReactToastify.css";
 import { ToastContainer, toast } from "react-toastify";
@@ -36,20 +36,24 @@ export default function ColorDelete() {
       <Segment basic size="tiny" color="black" />
       <Grid centered>
         <Grid.Row>
-          <Grid.Column width={8}>
-            {colors.map((color) => (
-              <Segment key={color.colorId}>
-                <h3>{color.colorName}</h3>
-                <Button
-                  icon="trash"
-                  color="red"
-                  floated="right"
-                  onClick={() => handleDelete(color.colorId)}
-                />
-                <br />
-                <br />
-              </Segment>
-            ))}
+        <Grid.Column width={16}>
+            <Card.Group itemsPerRow="5">
+              {colors.map((color) => (
+                <Card raised key={color.colorId}>
+                  <Card.Content className="montserrat">
+                    <Card.Header>{color.colorName}</Card.Header>
+                  </Card.Content>
+                  <CardContent extra>
+                    <Button
+                      icon="trash"
+                      color="red"
+                      floated="right"
+                      onClick={() => handleDelete(color.colorId)}
+                    />
+                  </CardContent>
+                </Card>
+              ))}
+            </Card.Group>
           </Grid.Column>
         </Grid.Row>
       </Grid>
