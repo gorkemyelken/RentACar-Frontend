@@ -9,7 +9,7 @@ import "react-toastify/dist/ReactToastify.css";
 export default function ColorAdd() {
   let colorService = new ColorService();
 
-  const notifySuccess = () =>
+  const notify = () =>
     toast.success("Color added!", {
       position: "bottom-center",
       autoClose: 5000,
@@ -33,30 +33,20 @@ export default function ColorAdd() {
         console.log(values);
         colorService.add(values);
         resetForm();
-        notifySuccess();
+        notify();
       },
       validationSchema,
     });
 
   return (
     <Container>
-      <ToastContainer
-        position="top-right"
-        autoClose={5000}
-        hideProgressBar={false}
-        newestOnTop={false}
-        closeOnClick
-        rtl={false}
-        pauseOnFocusLoss
-        draggable
-        pauseOnHover
-      />
+      
 
       <h2>Add A Color</h2>
       <Segment basic size="tiny" color="black" />
       <Grid centered>
         <Grid.Row>
-          <Grid.Column width={8}>
+          <Grid.Column width={8} textAlign="center">
             <Form onSubmit={handleSubmit}>
               <h3>Color Name</h3>
               <Input
@@ -76,11 +66,21 @@ export default function ColorAdd() {
               <Button fluid color="green" type="submit">
                 Submit
               </Button>
-              <code>{JSON.stringify(values)}</code>
             </Form>
           </Grid.Column>
         </Grid.Row>
       </Grid>
+      <ToastContainer
+        position="top-right"
+        autoClose={5000}
+        hideProgressBar={false}
+        newestOnTop={false}
+        closeOnClick
+        rtl={false}
+        pauseOnFocusLoss
+        draggable
+        pauseOnHover
+      />
     </Container>
   );
 }

@@ -9,7 +9,7 @@ import "react-toastify/dist/ReactToastify.css";
 export default function SignUp() {
   let customerService = new CustomerService();
 
-  const notifySuccess = () =>
+  const notify = () =>
     toast.success("You have successfully registered!", {
       position: "bottom-center",
       autoClose: 5000,
@@ -76,7 +76,7 @@ export default function SignUp() {
       onSubmit: (values, { resetForm }) => {
         console.log(values);
         customerService.add(values);
-        notifySuccess();
+        notify();
       },
       validationSchema,
     });
@@ -87,7 +87,7 @@ export default function SignUp() {
       <Segment basic size="tiny" color="black" />
       <Grid centered>
         <Grid.Row>
-          <Grid.Column width={8}>
+          <Grid.Column width={8} textAlign="center">
             <Form onSubmit={handleSubmit}>
               <Grid>
                 <Grid.Row>
@@ -218,8 +218,6 @@ export default function SignUp() {
               <Button type="submit" className="signUpButton">
                 Submit
               </Button>
-
-              <code>{JSON.stringify(values)}</code>
             </Form>
           </Grid.Column>
         </Grid.Row>

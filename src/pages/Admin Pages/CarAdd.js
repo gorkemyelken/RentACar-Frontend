@@ -70,19 +70,6 @@
 
 //   return (
 //     <Container>
-//       <ToastContainer
-//         position="top-right"
-//         autoClose={5000}
-//         hideProgressBar={false}
-//         newestOnTop={false}
-//         closeOnClick
-//         rtl={false}
-//         pauseOnFocusLoss
-//         draggable
-//         pauseOnHover
-//       />
-//       <br />
-//       <br />
 //       <h2>Add A Car</h2>
 //       <hr />
 //       <Grid centered>
@@ -181,6 +168,17 @@
 //           </Grid.Column>
 //         </Grid.Row>
 //       </Grid>
+//       <ToastContainer
+//         position="top-right"
+//         autoClose={5000}
+//         hideProgressBar={false}
+//         newestOnTop={false}
+//         closeOnClick
+//         rtl={false}
+//         pauseOnFocusLoss
+//         draggable
+//         pauseOnHover
+//       />
 //     </Container>
 //   );
 // }

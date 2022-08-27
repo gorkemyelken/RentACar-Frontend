@@ -71,7 +71,7 @@ export default function CarList() {
                   <Form.Input fluid label="Max" />
                 </Form.Group>
                 <br />
-                <Button inverted circular fluid color="green" content="Filter" />
+                <Button circular fluid color="green" content="Filter" />
                 <br />
                 <Button  circular fluid color="grey" content="Clear Filter" />
               </Form>

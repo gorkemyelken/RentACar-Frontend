@@ -39,7 +39,7 @@ export default function CarDetail() {
       </Label>
 
       <Label color="black" horizontal size="big">
-      {car.description}
+        {car.description}
       </Label>
 
       <Label color="black" horizontal size="big">
@@ -55,7 +55,7 @@ export default function CarDetail() {
         <div>
           <Image.Group size="medium">
             {car.carImages?.map((carImages) => (
-              <Image src={carImages.imagePath} />
+              <Image src={carImages.imagePath} href={carImages.imagePath} />
             ))}
           </Image.Group>
         </div>
