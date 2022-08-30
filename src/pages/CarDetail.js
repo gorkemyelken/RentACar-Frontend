@@ -1,13 +1,8 @@
 import React, { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import CarService from "../services/carService";
-import {
-  Container,
-  Image,
-  Button,
-  Label,
-  Segment,
-} from "semantic-ui-react";
+import { Container, Image, Button, Label, Segment } from "semantic-ui-react";
+import { NavLink } from "react-router-dom";
 
 export default function CarDetail() {
   let { id } = useParams();
@@ -46,14 +41,27 @@ export default function CarDetail() {
 
       <br />
       <br />
-      <Button className="submitButton">Rent Now!</Button>
+      {car.rental == null ? (
+        <Button className="submitButton" 
+        as={NavLink}
+        to={`/rentals/add/${car.carId}`}
+        >
+          Rent Now!</Button>
+      ) : (
+        <h1>This vehicle has been rented.</h1>
+      )}
+
       <br />
       <br />
       {car.carImages == null ? null : (
         <div>
           <Image.Group size="medium">
             {car.carImages?.map((carImages) => (
-              <Image key={carImages.carImageId} src={carImages.imagePath} href={carImages.imagePath} />
+              <Image
+                key={carImages.carImageId}
+                src={carImages.imagePath}
+                href={carImages.imagePath}
+              />
             ))}
           </Image.Group>
         </div>

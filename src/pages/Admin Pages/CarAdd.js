@@ -64,7 +64,7 @@ export default function CarAdd() {
   };
 
   const validationSchema = yup.object().shape({
-    carName: yup.string().required("Required field."),
+    carName: yup.string().required("Required field.").min(2),
     dailyPrice: yup.number().required("Required field.").min(0),
     modelYear: yup.number().required("Required field.").min(1950),
     description: yup.string().required("Required field."),

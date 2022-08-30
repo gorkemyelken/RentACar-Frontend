@@ -17,7 +17,7 @@ import { useFormik } from "formik";
 import BrandService from "../services/brandService";
 import ColorService from "../services/colorService";
 
-export default function CarList({ type }) {
+export default function CarList() {
   let carService = new CarService();
   let brandService = new BrandService();
   let colorService = new ColorService();

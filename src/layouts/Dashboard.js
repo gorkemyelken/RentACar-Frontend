@@ -8,6 +8,7 @@ import ColorAdd from "../pages/Admin Pages/ColorAdd";
 import ColorDelete from "../pages/Admin Pages/ColorDelete";
 import CarDetail from "../pages/CarDetail";
 import CarList from "../pages/CarList";
+import Rental from "../pages/Rental";
 import SignUp from "../pages/SignUp";
 import AboutUsLayout from "./AboutUsLayout";
 import AdminLayout from "./AdminLayout";
@@ -39,6 +40,7 @@ export default function Dashboard() {
         <Route exact path="/colors/add" element={<ColorAdd />} />
         <Route exact path="/colors/delete" element={<ColorDelete />} />
         
+        <Route exact path="/rentals/add/:id" element={<Rental />} />
       </Routes>
 
       <Footer />
