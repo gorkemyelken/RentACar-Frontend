@@ -3,6 +3,7 @@ import { Route, Routes } from "react-router-dom";
 import BrandAdd from "../pages/Admin Pages/BrandAdd";
 import BrandDelete from "../pages/Admin Pages/BrandDelete";
 import CarAdd from "../pages/Admin Pages/CarAdd";
+import CarDelete from "../pages/Admin Pages/CarDelete";
 import ColorAdd from "../pages/Admin Pages/ColorAdd";
 import ColorDelete from "../pages/Admin Pages/ColorDelete";
 import CarDetail from "../pages/CarDetail";
@@ -30,6 +31,7 @@ export default function Dashboard() {
         <Route exact path="/cars" element={<CarList />} />      
         <Route exact path="/cars/:id" element={<CarDetail />} />
         <Route exact path="/cars/add" element={<CarAdd />} />   
+        <Route exact path="/cars/delete" element={<CarDelete/>} />
 
         <Route exact path="/brands/add" element={<BrandAdd />} />
         <Route exact path="/brands/delete" element={<BrandDelete />} />

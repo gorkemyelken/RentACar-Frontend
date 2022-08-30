@@ -16,4 +16,8 @@ export default class CarService {
     findByFiltered(values) {
         return axios.get("http://localhost:8080/api/cars/findbyfiltered", values)
     }
+
+    delete(id) {
+        return axios.delete("http://localhost:8080/api/cars/delete?carId=" + id)
+    }
 }
