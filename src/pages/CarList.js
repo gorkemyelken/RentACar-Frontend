@@ -133,7 +133,7 @@ export default function CarList({ type }) {
                       <br />
                       <Card.Content extra>
                         <strong>Daily Price: </strong>
-                        <Label color="black" horizontal size="large">
+                        <Label color="red" horizontal size="big">
                           {car.dailyPrice}₺
                         </Label>
                       </Card.Content>
@@ -142,10 +142,9 @@ export default function CarList({ type }) {
                       <Button
                         circular
                         floated="right"
-                        inverted
                         as={NavLink}
                         to={`/cars/${car.carId}`}
-                        color="red"
+                        color="black"
                       >
                         View Detail
                       </Button>
