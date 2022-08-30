@@ -47,8 +47,7 @@
   border-radius: 10px;
 }
 
-.ui.button.rentButton,
-.ui.button.signUpButton
+.ui.button.submitButton
 {
   display: block;
   margin: auto;
@@ -61,13 +60,10 @@
   border-radius: 20px;
 }
 
-.ui.button.rentButton:hover,
-.ui.button.signUpButton:hover {
+.ui.button.submitButton:hover {
   color: white;
   background-color: black;
 }
-
-
 
 .brandImage{
   filter: grayscale(100%);

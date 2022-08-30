@@ -7,7 +7,6 @@ import {
   Input,
   Button,
   Label,
-  Select,
 } from "semantic-ui-react";
 import CarService from "../../services/carService";
 import * as yup from "yup";
@@ -68,7 +67,7 @@ export default function CarAdd() {
     carName: yup.string().required("Required field."),
     dailyPrice: yup.number().required("Required field.").min(0),
     modelYear: yup.number().required("Required field.").min(1950),
-    description: yup.string().required("Required field.")
+    description: yup.string().required("Required field."),
   });
 
   const { handleSubmit, handleChange, values, errors, touched, handleBlur } =
@@ -123,7 +122,7 @@ export default function CarAdd() {
                   {errors.brand}
                 </Label>
               )}
-               <h3>Color</h3>
+              <h3>Color</h3>
               <select
                 name="color.colorId"
                 value={values.color?.colorId}
@@ -137,8 +136,6 @@ export default function CarAdd() {
                   {errors.color}
                 </Label>
               )}
-
-
               <h3>Daily Price</h3>
               <Input
                 fluid
@@ -180,7 +177,7 @@ export default function CarAdd() {
               )}
               <br />
               <br />
-              <Button fluid color="green" type="submit">
+              <Button type="submit" className="submitButton">
                 Submit
               </Button>
               {/* <code>{JSON.stringify(values)}</code> */}

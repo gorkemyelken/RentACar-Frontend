@@ -46,7 +46,7 @@ export default function CarDetail() {
 
       <br />
       <br />
-      <Button className="rentButton">Rent Now!</Button>
+      <Button className="submitButton">Rent Now!</Button>
       <br />
       <br />
       {car.carImages == null ? null : (

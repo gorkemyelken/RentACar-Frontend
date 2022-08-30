@@ -63,7 +63,7 @@ export default function ColorAdd() {
               )}
               <br />
               <br />
-              <Button fluid color="green" type="submit">
+              <Button type="submit" className="submitButton">
                 Submit
               </Button>
             </Form>

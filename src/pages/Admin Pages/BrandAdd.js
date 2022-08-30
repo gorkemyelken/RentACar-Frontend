@@ -77,7 +77,7 @@ export default function BrandAdd() {
               )}
               <br />
               <br />
-              <Button fluid color="green" type="submit">
+              <Button type="submit" className="submitButton">
                 Submit
               </Button>
             </Form>

@@ -185,6 +185,7 @@ export default function SignUp() {
                       fluid
                       type="password"
                       name="password"
+                      placeholder="******"
                       value={values.password}
                       onChange={handleChange}
                       onBlur={handleBlur}
@@ -201,6 +202,7 @@ export default function SignUp() {
                       fluid
                       type="password"
                       name="confirmPassword"
+                      placeholder="******"
                       value={values.confirmPassword}
                       onChange={handleChange}
                       onBlur={handleBlur}
@@ -216,7 +218,7 @@ export default function SignUp() {
 
               <br />
               <br />
-              <Button type="submit" className="signUpButton">
+              <Button type="submit" className="submitButton">
                 Submit
               </Button>
             </Form>
