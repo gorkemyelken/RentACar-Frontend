@@ -12,4 +12,8 @@ export default class CarService {
     add(values) {
         return axios.post("http://localhost:8080/api/cars/add", values);
     }
+
+    findByFiltered(values) {
+        return axios.get("http://localhost:8080/api/cars/findbyfiltered", values)
+    }
 }

@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { Container, Grid, Button, Card, Image, Segment, CardContent } from "semantic-ui-react";
+import { Container, Grid, Button, Card, Segment, CardContent } from "semantic-ui-react";
 import BrandService from "../../services/brandService";
 import "react-toastify/dist/ReactToastify.css";
 import { ToastContainer, toast } from "react-toastify";

@@ -6,8 +6,8 @@ import {
   Form,
   Input,
   Button,
-  Label, 
-  Select
+  Label,
+  Select,
 } from "semantic-ui-react";
 import CarService from "../../services/carService";
 import * as yup from "yup";
@@ -29,19 +29,7 @@ export default function CarAdd() {
     colorService.getColors().then((result) => setColors(result.data.data));
   }, []);
 
-  const brandOptions = brands.map((brand) => ({
-    key: brand.brandId,
-    text: brand.brandName,
-    value: brand,
-  }));
-
-  const colorOptions = colors.map((color) => ({
-    key: color.colorId,
-    text: color.colorName,
-    value: color,
-  }));
-
-  const notifySuccess = () =>
+  const notify = () =>
     toast.success("Car added!", {
       position: "bottom-center",
       autoClose: 5000,
@@ -52,16 +40,41 @@ export default function CarAdd() {
       progress: undefined,
     });
 
+  const brandOptions = () => {
+    const brandlist = [];
+    brands.map((brand) =>
+      brandlist.push(
+        <option key={brand.brandId} value={brand.brandId}>
+          {brand.brandName}
+        </option>
+      )
+    );
+    return brandlist;
+  };
+
+  const colorOptions = () => {
+    const colorList = [];
+    colors.map((color) =>
+      colorList.push(
+        <option key={color.colorId} value={color.colorId}>
+          {color.colorName}
+        </option>
+      )
+    );
+    return colorList;
+  };
+
   const validationSchema = yup.object().shape({
     carName: yup.string().required("Required field."),
+    dailyPrice: yup.number().required("Required field.").min(0),
+    modelYear: yup.number().required("Required field.").min(1950),
+    description: yup.string().required("Required field.")
   });
 
   const { handleSubmit, handleChange, values, errors, touched, handleBlur } =
     useFormik({
       initialValues: {
         carName: "",
-        brand: "",
-        color: "",
         dailyPrice: "",
         modelYear: "",
         description: "",
@@ -70,12 +83,10 @@ export default function CarAdd() {
         console.log(values);
         carService.add(values);
         resetForm();
-        notifySuccess();
+        notify();
       },
       validationSchema,
     });
-
-    
 
   return (
     <Container>
@@ -99,27 +110,35 @@ export default function CarAdd() {
                 </Label>
               )}
               <h3>Brand</h3>
-              <Select 
-              name="brand"
-              options={brandOptions}
-              value={values.brand}
-              onChange={handleChange}/>
+              <select
+                name="brand.brandId"
+                value={values.brand?.brandId}
+                onChange={handleChange}
+              >
+                <option>Brand</option>
+                {brandOptions()}
+              </select>
               {errors.brand && touched.brand && (
                 <Label basic color="red" pointing="above">
                   {errors.brand}
                 </Label>
               )}
-              <h3>Color</h3>
-              <Select 
-              name="color"
-              options={colorOptions}
-              value={values.color}
-              onChange={handleChange}/>
+               <h3>Color</h3>
+              <select
+                name="color.colorId"
+                value={values.color?.colorId}
+                onChange={handleChange}
+              >
+                <option>Color</option>
+                {colorOptions()}
+              </select>
               {errors.color && touched.color && (
                 <Label basic color="red" pointing="above">
                   {errors.color}
                 </Label>
               )}
+
+
               <h3>Daily Price</h3>
               <Input
                 fluid
@@ -164,7 +183,7 @@ export default function CarAdd() {
               <Button fluid color="green" type="submit">
                 Submit
               </Button>
-              <code>{JSON.stringify(values)}</code>
+              {/* <code>{JSON.stringify(values)}</code> */}
             </Form>
           </Grid.Column>
         </Grid.Row>
