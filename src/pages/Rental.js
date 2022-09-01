@@ -9,10 +9,8 @@ import {
   Label,
   Segment,
   Image,
-  Select
 } from "semantic-ui-react";
 import RentalService from "../services/rentalService";
-import * as yup from "yup";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import CarService from "../services/carService";
@@ -114,25 +112,34 @@ export default function Rental() {
                 </Label>
               )}
               <Segment color="grey" inverted>
-              <h3>Credit Card</h3>
-              <Form.Group inline>
-                  <Input placeholder="XXXX" />&nbsp;
-                  <Input placeholder="XXXX" />&nbsp;
-                  <Input placeholder="XXXX" />&nbsp;
+                <h3>Credit Card</h3>
+                <Form.Group inline>
                   <Input placeholder="XXXX" />
-              </Form.Group>
-              <Input fluid placeholder="Name On Credit Card" />
-              <br/>
-              <Form.Group inline>
-              <Input placeholder="CVC2" />&nbsp;
-              <select><option>Month</option></select>&nbsp;
-              <select><option>Year</option></select>
-              </Form.Group>
-              <Form.Checkbox label='I want to use 3D.'/>
-              <Form.Checkbox label='I consent to the saving of my credit card information.' />
+                  &nbsp;
+                  <Input placeholder="XXXX" />
+                  &nbsp;
+                  <Input placeholder="XXXX" />
+                  &nbsp;
+                  <Input placeholder="XXXX" />
+                </Form.Group>
+                <Input fluid placeholder="Name On Credit Card" />
+                <br />
+                <Form.Group inline>
+                  <Input placeholder="CVC2" />
+                  &nbsp;
+                  <select>
+                    <option>Month</option>
+                  </select>
+                  &nbsp;
+                  <select>
+                    <option>Year</option>
+                  </select>
+                </Form.Group>
+                <Form.Checkbox label="I want to use 3D." />
+                <Form.Checkbox label="I consent to the saving of my credit card information." />
               </Segment>
               <br />
-              <Form.Checkbox label='I agree to the Terms and Conditions.' />
+              <Form.Checkbox label="I agree to the Terms and Conditions." />
               <br />
               <Button type="submit" className="submitButton">
                 Rent

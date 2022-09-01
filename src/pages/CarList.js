@@ -29,12 +29,12 @@ export default function CarList() {
   const [brands, setBrands] = useState([]);
   const [colors, setColors] = useState([]);
 
-  const [brandId, setBrandId] = useState(0);
-  const [colorId, setColorId] = useState(0);
-  const [startDailyPrice, setStartDailyPrice] = useState(0);
-  const [endDailyPrice, setEndDailyPrice] = useState(0);
-  const [startModelYear, setStartModelYear] = useState(0);
-  const [endModelYear, setEndModelYear] = useState(0);
+  const brandId = 0;
+  const colorId = 0;
+  const startDailyPrice = 0;
+  const endDailyPrice = 0;
+  const startModelYear = 0;
+  const endModelYear = 0;
 
   useEffect(() => {
     carService
@@ -83,25 +83,29 @@ export default function CarList() {
     endModelYear: yup.number().required("Required field.").min(1950),
   });
 
-  const { handleSubmit, handleChange, values, touched, handleBlur } = useFormik(
-    {
-      initialValues: {
-        startModelYear: "",
-        endModelYear: "",
-        startDailyPrice: "",
-        endDailyPrice: "",
-      },
-      onSubmit: (values, { resetForm }) => {
-        console.log(values);
-        carService
-          .findByFiltered(values.brandId, values.colorId, values.startDailyPrice, values.endDailyPrice, values.startModelYear, values.endModelYear
-          )
-          .then((result) => setCars(result.data.data));
-        resetForm();
-      },
-      validationSchema,
-    }
-  );
+  const { handleSubmit, handleChange, values, handleBlur } = useFormik({
+    initialValues: {
+      startModelYear: "",
+      endModelYear: "",
+      startDailyPrice: "",
+      endDailyPrice: "",
+    },
+    onSubmit: (values, { resetForm }) => {
+      console.log(values);
+      carService
+        .findByFiltered(
+          values.brandId,
+          values.colorId,
+          values.startDailyPrice,
+          values.endDailyPrice,
+          values.startModelYear,
+          values.endModelYear
+        )
+        .then((result) => setCars(result.data.data));
+      resetForm();
+    },
+    validationSchema,
+  });
 
   const handleClearFilter = () => {
     window.location.reload();
@@ -112,21 +116,26 @@ export default function CarList() {
       carService
         .getAllSortedByCarNameAsc()
         .then((result) => setCars(result.data.data));
-    }
-    else if(type === 2){
-      carService.getAllSortedByCarNameDesc().then((result) => setCars(result.data.data));
-    }
-    else if(type === 3){
-      carService.getAllSortedByDailyPriceAsc().then((result) => setCars(result.data.data));
-    }
-    else if(type === 4){
-      carService.getAllSortedByDailyPriceDesc().then((result) => setCars(result.data.data));
-    }
-    else if(type === 5){
-      carService.getAllSortedByModelYearAsc().then((result) => setCars(result.data.data));
-    }
-    else if(type === 6){
-      carService.getAllSortedByModelYearDesc().then((result) => setCars(result.data.data));
+    } else if (type === 2) {
+      carService
+        .getAllSortedByCarNameDesc()
+        .then((result) => setCars(result.data.data));
+    } else if (type === 3) {
+      carService
+        .getAllSortedByDailyPriceAsc()
+        .then((result) => setCars(result.data.data));
+    } else if (type === 4) {
+      carService
+        .getAllSortedByDailyPriceDesc()
+        .then((result) => setCars(result.data.data));
+    } else if (type === 5) {
+      carService
+        .getAllSortedByModelYearAsc()
+        .then((result) => setCars(result.data.data));
+    } else if (type === 6) {
+      carService
+        .getAllSortedByModelYearDesc()
+        .then((result) => setCars(result.data.data));
     }
   };
 
@@ -156,12 +165,24 @@ export default function CarList() {
         </List>
         <Dropdown text="Best Match" pointing button>
           <Dropdown.Menu>
-            <Dropdown.Item onClick={() => handleSort(1)}>Car Name Ascending</Dropdown.Item>
-            <Dropdown.Item onClick={() => handleSort(2)}>Car Name Descending</Dropdown.Item>
-            <Dropdown.Item onClick={() => handleSort(3)}>Daily Price Low To High</Dropdown.Item>
-            <Dropdown.Item onClick={() => handleSort(4)}>Daily Price High To Low</Dropdown.Item>
-            <Dropdown.Item onClick={() => handleSort(5)}>Model Year Low To High</Dropdown.Item>
-            <Dropdown.Item onClick={() => handleSort(6)}>Model Year High To Low</Dropdown.Item>
+            <Dropdown.Item onClick={() => handleSort(1)}>
+              Car Name Ascending
+            </Dropdown.Item>
+            <Dropdown.Item onClick={() => handleSort(2)}>
+              Car Name Descending
+            </Dropdown.Item>
+            <Dropdown.Item onClick={() => handleSort(3)}>
+              Daily Price Low To High
+            </Dropdown.Item>
+            <Dropdown.Item onClick={() => handleSort(4)}>
+              Daily Price High To Low
+            </Dropdown.Item>
+            <Dropdown.Item onClick={() => handleSort(5)}>
+              Model Year Low To High
+            </Dropdown.Item>
+            <Dropdown.Item onClick={() => handleSort(6)}>
+              Model Year High To Low
+            </Dropdown.Item>
           </Dropdown.Menu>
         </Dropdown>
         <Grid divided="vertically">
