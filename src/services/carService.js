@@ -20,4 +20,8 @@ export default class CarService {
     delete(id) {
         return axios.delete("http://localhost:8080/api/cars/delete?carId=" + id)
     }
+
+    findByBrand(id) {
+        return axios.get("http://localhost:8080/api/cars/findbybrand?brandId=" + id)
+    }
 }

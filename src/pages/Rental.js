@@ -121,10 +121,10 @@ export default function Rental() {
                   <Input placeholder="XXXX" />&nbsp;
                   <Input placeholder="XXXX" />
               </Form.Group>
-              <Input fluid placeholder="Example Example" />
+              <Input fluid placeholder="Name On Credit Card" />
               <br/>
               <Form.Group inline>
-              <Input placeholder="XXX" />&nbsp;
+              <Input placeholder="CVC2" />&nbsp;
               <select><option>Month</option></select>&nbsp;
               <select><option>Year</option></select>
               </Form.Group>

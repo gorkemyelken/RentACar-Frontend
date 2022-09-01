@@ -32,7 +32,7 @@ export default function HomeLayout() {
             <h2>BRANDS</h2>
             <hr />
             <BrandList />
-            <h2>RESERVATION</h2>
+            {/* <h2>RESERVATION</h2>
             <hr />
             <Form>
               <Form.Group>
@@ -50,7 +50,7 @@ export default function HomeLayout() {
               <Button inverted circular color="red" type="submit">
                 SEARCH
               </Button>
-            </Form>
+            </Form> */}
           </Grid.Column>
           <Grid.Column />
         </Grid.Row>

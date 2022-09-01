@@ -9,6 +9,9 @@ import {
   Segment,
   CardContent,
   Label,
+  Icon,
+  List,
+  Menu,
 } from "semantic-ui-react";
 import * as yup from "yup";
 import CarService from "../services/carService";
@@ -112,14 +115,30 @@ export default function CarList() {
     }
   );
 
+  const handleClearFilter = () => {
+    window.location.reload();
+  };
+
+  const handleByBrand = (id) => {
+    carService.findByBrand(id).then((result) => setCars(result.data.data))
+  };
+
   return (
     <div>
       <Container>
         <h2>CARS</h2>
         <Segment basic size="tiny" color="black" />
+        <List horizontal>
+          {brands.map((brand) => (
+            <List.Item key={brand.brandId}>
+              <Button circular icon labelPosition='right' onClick={() => handleByBrand(brand.brandId)}>{brand.brandName}<Icon name="plus"/></Button>
+            </List.Item>
+          ))}
+        </List>
         <Grid divided="vertically">
           <Grid.Row>
             <Grid.Column width={13}>
+            <br/>
               <Card.Group itemsPerRow="3">
                 {cars.map((car) => (
                   <Card raised key={car.carId}>
@@ -212,14 +231,22 @@ export default function CarList() {
                   />
                 </Form.Group>
                 <br />
-                <Button circular fluid color="green" type="submit" content="Filter" />
+                <Button circular fluid color="green" type="submit">
+                  <Icon name="filter"></Icon>Filter
+                </Button>
                 <br />
-                <Button circular fluid color="grey" content="Clear Filter" />
+                <Button
+                  circular
+                  fluid
+                  color="grey"
+                  content="Clear Filter"
+                  onClick={() => handleClearFilter()}
+                />
               </Form>
             </Grid.Column>
           </Grid.Row>
         </Grid>
-        <code>{JSON.stringify(values)}</code>
+        {/* <code>{JSON.stringify(values)}</code> */}
       </Container>
     </div>
   );
