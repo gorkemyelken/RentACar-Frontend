@@ -65,6 +65,12 @@
   color: white;
   background-color: black;
 }
+.ui.button.pointing.dropdown {
+  border-radius: 10px;
+  background-color:  rgb(129, 129, 129);
+  display: block;
+  width: max-content;
+}
 
 .brandImage{
   filter: grayscale(100%);

@@ -11,7 +11,7 @@ import {
   Label,
   Icon,
   List,
-  Menu,
+  Dropdown,
 } from "semantic-ui-react";
 import * as yup from "yup";
 import CarService from "../services/carService";
@@ -92,21 +92,9 @@ export default function CarList() {
         endDailyPrice: "",
       },
       onSubmit: (values, { resetForm }) => {
-        setBrandId(values.brandId);
-        setColorId(values.colorId);
-        setStartDailyPrice(values.startDailyPrice);
-        setEndDailyPrice(values.endDailyPrice);
-        setStartModelYear(values.startModelYear);
-        setEndModelYear(values.endModelYear);
         console.log(values);
         carService
-          .findByFiltered(
-            brandId,
-            colorId,
-            startDailyPrice,
-            endDailyPrice,
-            startModelYear,
-            endModelYear
+          .findByFiltered(values.brandId, values.colorId, values.startDailyPrice, values.endDailyPrice, values.startModelYear, values.endModelYear
           )
           .then((result) => setCars(result.data.data));
         resetForm();
@@ -119,8 +107,31 @@ export default function CarList() {
     window.location.reload();
   };
 
+  const handleSort = (type) => {
+    if (type === 1) {
+      carService
+        .getAllSortedByCarNameAsc()
+        .then((result) => setCars(result.data.data));
+    }
+    else if(type === 2){
+      carService.getAllSortedByCarNameDesc().then((result) => setCars(result.data.data));
+    }
+    else if(type === 3){
+      carService.getAllSortedByDailyPriceAsc().then((result) => setCars(result.data.data));
+    }
+    else if(type === 4){
+      carService.getAllSortedByDailyPriceDesc().then((result) => setCars(result.data.data));
+    }
+    else if(type === 5){
+      carService.getAllSortedByModelYearAsc().then((result) => setCars(result.data.data));
+    }
+    else if(type === 6){
+      carService.getAllSortedByModelYearDesc().then((result) => setCars(result.data.data));
+    }
+  };
+
   const handleByBrand = (id) => {
-    carService.findByBrand(id).then((result) => setCars(result.data.data))
+    carService.findByBrand(id).then((result) => setCars(result.data.data));
   };
 
   return (
@@ -131,14 +142,32 @@ export default function CarList() {
         <List horizontal>
           {brands.map((brand) => (
             <List.Item key={brand.brandId}>
-              <Button circular icon labelPosition='right' onClick={() => handleByBrand(brand.brandId)}>{brand.brandName}<Icon name="plus"/></Button>
+              <Button
+                circular
+                icon
+                labelPosition="right"
+                onClick={() => handleByBrand(brand.brandId)}
+              >
+                {brand.brandName}
+                <Icon name="plus" />
+              </Button>
             </List.Item>
           ))}
         </List>
+        <Dropdown text="Best Match" pointing button>
+          <Dropdown.Menu>
+            <Dropdown.Item onClick={() => handleSort(1)}>Car Name Ascending</Dropdown.Item>
+            <Dropdown.Item onClick={() => handleSort(2)}>Car Name Descending</Dropdown.Item>
+            <Dropdown.Item onClick={() => handleSort(3)}>Daily Price Low To High</Dropdown.Item>
+            <Dropdown.Item onClick={() => handleSort(4)}>Daily Price High To Low</Dropdown.Item>
+            <Dropdown.Item onClick={() => handleSort(5)}>Model Year Low To High</Dropdown.Item>
+            <Dropdown.Item onClick={() => handleSort(6)}>Model Year High To Low</Dropdown.Item>
+          </Dropdown.Menu>
+        </Dropdown>
         <Grid divided="vertically">
           <Grid.Row>
             <Grid.Column width={13}>
-            <br/>
+              <br />
               <Card.Group itemsPerRow="3">
                 {cars.map((car) => (
                   <Card raised key={car.carId}>
