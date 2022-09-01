@@ -8,6 +8,7 @@ import ColorAdd from "../pages/Admin Pages/ColorAdd";
 import ColorDelete from "../pages/Admin Pages/ColorDelete";
 import CarDetail from "../pages/CarDetail";
 import CarList from "../pages/CarList";
+import LogIn from "../pages/LogIn";
 import Rental from "../pages/Rental";
 import SignUp from "../pages/SignUp";
 import AboutUsLayout from "./AboutUsLayout";
@@ -27,6 +28,7 @@ export default function Dashboard() {
         <Route exact path="/aboutus" element={<AboutUsLayout />} />
         <Route exact path="/adminpanel" element={<AdminLayout />} />
         <Route exact path="/signup" element={<SignUp />} />
+        <Route exact path="/login" element={<LogIn />} />
         <Route exact path="*" element={<Error404 />} />
 
         <Route exact path="/cars" element={<CarList />} />      

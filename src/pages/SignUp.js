@@ -1,10 +1,19 @@
 import React from "react";
 import { useFormik } from "formik";
-import { Container, Grid, Form, Input, Button, Label, Segment } from "semantic-ui-react";
+import {
+  Container,
+  Grid,
+  Form,
+  Input,
+  Button,
+  Label,
+  Segment,
+} from "semantic-ui-react";
 import CustomerService from "../services/customerService";
 import * as yup from "yup";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import { NavLink } from "react-router-dom";
 
 export default function SignUp() {
   let customerService = new CustomerService();
@@ -222,6 +231,10 @@ export default function SignUp() {
                 Submit
               </Button>
             </Form>
+            <h3>Already have an account?</h3>
+            <Button inverted color="red" as={NavLink} to="/login">
+              Login
+            </Button>
           </Grid.Column>
         </Grid.Row>
       </Grid>
@@ -237,6 +250,5 @@ export default function SignUp() {
         pauseOnHover
       />
     </Container>
-    
   );
 }

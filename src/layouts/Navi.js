@@ -14,10 +14,10 @@ export default function Navi() {
           <Menu.Item as={NavLink} to="/aboutus" content="About Us" icon="question circle" />
           <Menu.Item as={NavLink} to="/adminpanel" content="ADMİN PANEL" />
           <Menu.Item position='right'>
-            <Button inverted color='red' as={NavLink} to="/signup">Sign up</Button>
+            <Button inverted color='red' as={NavLink} to="/signup">Sign Up</Button>
           </Menu.Item>
           <Menu.Item>
-            <Button color='red'>Log-in</Button>
+            <Button color='red' as={NavLink} to="/login">Log In</Button>
           </Menu.Item>
         </Container>
       </Menu>
