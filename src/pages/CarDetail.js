@@ -41,14 +41,15 @@ export default function CarDetail() {
 
       <br />
       <br />
-      {car.rental == null ? (
+      {car.rentals?.length > 0 ? (
+        <h1>This vehicle has been rented.</h1>
+      ) : (
         <Button className="submitButton" 
         as={NavLink}
         to={`/rentals/add/${car.carId}`}
         >
           Rent Now!</Button>
-      ) : (
-        <h1>This vehicle has been rented.</h1>
+        
       )}
 
       <br />

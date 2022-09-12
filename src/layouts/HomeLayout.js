@@ -1,9 +1,31 @@
-import React from "react";
-import { Grid, Step, Image } from "semantic-ui-react";
+import React, { useState, useEffect } from "react";
+import {
+  Card,
+  Grid,
+  Image,
+  Form,
+  Button,
+  Step,
+  CardContent,
+  Label,
+  Icon,
+  List,
+  Dropdown,
+  CardGroup,
+} from "semantic-ui-react";
+import { NavLink } from "react-router-dom";
 import BrandList from "../pages/BrandList";
 import homeImage from "../images/homeImage.png";
+import CarService from "../services/carService";
 
 export default function HomeLayout() {
+  let carService = new CarService();
+  const [cars, setCars] = useState([]);
+
+  useEffect(() => {
+    carService.getCars().then((result) => setCars(result.data.data));
+  }, []);
+
   const steps = [
     {
       key: "Search",
@@ -28,29 +50,32 @@ export default function HomeLayout() {
           <Grid.Column />
           <Grid.Column width={8}>
             <Image src={homeImage} />
-            <Step.Group size="huge" items={steps} />
-            <h2>BRANDS</h2>
+            <Step.Group size="large" items={steps} />
+            <h2>MOST POPULAR CARS</h2>
             <hr />
-            <BrandList />
-            {/* <h2>RESERVATION</h2>
-            <hr />
-            <Form>
-              <Form.Group>
-                <Form.Input
-                  label="Rent Date"
-                  placeholder="YYYY-MM-DD"
-                  width={8}
-                />
-                <Form.Input
-                  label="Return Date"
-                  placeholder="YYYY-MM-DD"
-                  width={8}
-                />
-              </Form.Group>
-              <Button inverted circular color="red" type="submit">
-                SEARCH
-              </Button>
-            </Form> */}
+
+            <div>
+              <Image.Group size="medium">
+                {cars.map((car) => (
+                  <span>
+                    {car.rentals.length > 0 ? (
+                      <Image
+                      className="popularCar"
+                        key={car.carId}
+                        label={{
+                          as: "a",
+                          corner: "left",
+                          icon: "fire",
+                          color: "red",
+                        }}
+                        src={car.carImages[0]?.imagePath}
+                        as={NavLink} to={`/cars/${car.carId}`}
+                      />
+                    ) : null}
+                  </span>
+                ))}
+              </Image.Group>
+            </div>
           </Grid.Column>
           <Grid.Column />
         </Grid.Row>

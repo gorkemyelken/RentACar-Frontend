@@ -54,7 +54,7 @@ export default function Rental() {
 
   return (
     <Container>
-      <h2>Rental Page</h2>
+      <h2>RENTAL PAGE</h2>
       <Segment basic size="tiny" color="black" />
 
       <Grid divided="vertically">

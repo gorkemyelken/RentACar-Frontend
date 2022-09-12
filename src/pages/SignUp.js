@@ -228,7 +228,7 @@ export default function SignUp() {
               <br />
               <br />
               <Button type="submit" className="submitButton">
-                Submit
+                Sign Up
               </Button>
             </Form>
             <h3>Already have an account?</h3>

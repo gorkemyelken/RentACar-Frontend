@@ -163,7 +163,7 @@ export default function CarList() {
             </List.Item>
           ))}
         </List>
-        <Dropdown text="Best Match" pointing button>
+        <Dropdown text="Sort By" pointing button>
           <Dropdown.Menu>
             <Dropdown.Item onClick={() => handleSort(1)}>
               Car Name Ascending
@@ -192,11 +192,23 @@ export default function CarList() {
               <Card.Group itemsPerRow="3">
                 {cars.map((car) => (
                   <Card raised key={car.carId}>
-                    <Image
-                      circular
-                      size="huge"
-                      src={car.carImages[0]?.imagePath}
-                    />
+                    {car.rentals?.length > 0 ? (
+                      <Image
+                      label={{ as: 'a', corner: 'left', icon: 'fire',color:'red' }}
+                        circular
+                        size="huge"
+                        src={car.carImages[0]?.imagePath}
+                      />
+                    ): (
+<Image
+                        circular
+                        size="huge"
+                        src={car.carImages[0]?.imagePath}
+                      />
+
+                    )}
+                    
+
                     <Card.Content className="montserrat">
                       <Card.Header>{car.carName}</Card.Header>
                       <br />
