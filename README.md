@@ -17,8 +17,8 @@ Technologies used in the project:
 *   React
 *   React Router
 *   ReactDOM
-*   Semantic UI React
 *   React Axios
+*   Semantic UI React
 *   Formik
 *   Yup
 *   Toastify
