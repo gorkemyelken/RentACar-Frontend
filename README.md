@@ -26,3 +26,11 @@ Technologies used in the project:
 <h2>📧 Contact</h2>
 
 Görkem Yelken - [gorkemyelken@gmail.com](mailto:gorkemyelken@gmail.com)
+
+<h2>📧 Screenshots</h2>
+![1](https://user-images.githubusercontent.com/60850092/191594201-1caf799c-ecb5-4c14-a000-cef12ea17d38.png)
+![2](https://user-images.githubusercontent.com/60850092/191594214-c432f5ed-ca10-4a8e-90af-a73b1793cf1a.png)
+![3](https://user-images.githubusercontent.com/60850092/191594216-27350685-76be-48a2-be61-33fd1af7da36.png)
+![4](https://user-images.githubusercontent.com/60850092/191594220-9934cd69-9eea-4086-923f-f56a7a3b9495.png)
+![5](https://user-images.githubusercontent.com/60850092/191594224-9536c493-8ef4-43a5-bf99-6ac51a799d58.png)
+![6](https://user-images.githubusercontent.com/60850092/191594229-3ac8e280-7d7e-41c3-b142-b7c588b636b2.png)
