@@ -23,7 +23,7 @@ Technologies used in the project:
 *   Yup
 *   Toastify
 
-<h2>📧 Screenshots</h2>
+<h2>📷 Screenshots</h2>
 
 ![1](https://user-images.githubusercontent.com/60850092/191594201-1caf799c-ecb5-4c14-a000-cef12ea17d38.png)
 ![2](https://user-images.githubusercontent.com/60850092/191594214-c432f5ed-ca10-4a8e-90af-a73b1793cf1a.png)
